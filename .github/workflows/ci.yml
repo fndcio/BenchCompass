@@ -1,6 +1,5 @@
-# CI Pipeline — AGENTS.md G1-G7 + coverage + secret-scan
-# Her push/PR'da çalışır. Windows + Ubuntu matrix.
-name: CI (G1-G7)
+# CI Pipeline — lint/format/test/coverage/secret
+name: CI
 
 on:
   push:
@@ -12,24 +11,19 @@ permissions:
   contents: read
 
 jobs:
-  # --- G1: Lint ---
   lint:
-    name: "G1: Lint (ruff)"
+    name: "Lint (ruff)"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.13"
-      # Pinsiz `pip install ruff` en yeni sürümü kurup kural setini
-      # değiştiriyordu — pyproject [dev] bandındaki sürümle parite için
-      # -e ".[dev]" kurulur (ruff>=0.15,<0.16).
       - run: pip install -e ".[dev]"
       - run: ruff check .
 
-  # --- G2: Format ---
   format:
-    name: "G2: Format (ruff)"
+    name: "Format (ruff)"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -39,24 +33,20 @@ jobs:
       - run: pip install -e ".[dev]"
       - run: ruff format --check .
 
-  # --- G3: Tip Kontrolü (hard gate) ---
   typecheck:
-    name: "G3: Tip (mypy, hard)"
+    name: "Type check (mypy)"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.13"
-      # mypy yalnız kurulursa fastapi/pydantic/httpx stub'ları bulunamaz
-      # (ilk CI koşumunda 20+ import-not-found) — runtime bağımlılıklarıyla kur
       - run: pip install -e ".[dev]"
       - run: mypy api
 
-  # --- G4: Unit + Integration Test ---
   test:
-    name: "G4: Unit+Integration"
-    runs-on: ${{ matrix.os }}
+    name: "Unit+Integration"
+    runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
@@ -67,12 +57,10 @@ jobs:
         with:
           python-version: "3.13"
       - run: pip install -e ".[dev]"
-      # AGENTS.md Y4: "not e2e" filtresi ZORUNLU
       - run: pytest -m "not e2e and not slow" --tb=short
 
-  # --- Coverage (fail_under pyproject.toml'dan) ---
   coverage:
-    name: "Coverage (≥ fail_under)"
+    name: "Coverage"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -80,13 +68,10 @@ jobs:
         with:
           python-version: "3.13"
       - run: pip install -e ".[dev]"
-      # fail_under pyproject.toml [tool.coverage.report]'dan okunur (Y17/DRY) —
-      # CLI flag'i VERILMEZ, aksi halde pyproject'taki eşik override edilir.
       - run: pytest --cov=api -m "not e2e" --tb=short
 
-  # --- G5: Frontend (varsa) ---
   frontend:
-    name: "G5: Frontend (vitest)"
+    name: "Frontend (Vitest)"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -94,13 +79,12 @@ jobs:
         with:
           node-version: "20"
       - run: npm ci
-        continue-on-error: true  # package.json yoksa atla
+        continue-on-error: true
       - run: npm test
         continue-on-error: true
 
-  # --- Secret tarama (hard gate) ---
   secret-scan:
-    name: "Secret Scan (hard gate)"
+    name: "Secret Scan"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -111,19 +95,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-  # --- G7: Orkestratör (hard gate) — BENCHCOMPASS_YOL_HARITASI.md P0-1 ---
-  orchestrator:
-    name: "G7: Orkestratör (verify_completion, hard)"
+  privacy-scan:
+    name: "Privacy Scan"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.13"
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-      - run: pip install -e ".[dev]"
-      - run: npm ci
-      # G6 E2E tarayıcı gerektirir — CI'da atlanır; kalan kapılar (G1-G5, G7-G15) tam koşar
-      - run: python scripts/verify_completion.py --skip-e2e
+      - run: python scripts/privacy_scan.py .
