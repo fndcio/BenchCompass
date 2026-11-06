@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "benchcompass-benchmark-eval"
+version = "0.18.3"
+description = "Ollama yerel model degerlendirme: hiz + kalite + MD/HTML rapor"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+dependencies = ["pyyaml>=6.0"]
+
+[project.scripts]
+benchcompass-eval = "benchcompass_benchmark_eval.scripts.run_benchmark:main"
+
+[tool.setuptools]
+packages = ["benchcompass_benchmark_eval", "benchcompass_benchmark_eval.scripts"]
+include-package-data = true
+
+[tool.setuptools.package-data]
+"benchcompass_benchmark_eval" = ["tasks/*.json", "tasks/*.yaml", "data/*.json", "reports/*.md", "reports/*.html"]
+
+[tool.pytest.ini_options]
+testpaths = ["benchcompass_benchmark_eval/tests"]
+pythonpath = ["."]
+addopts = "-v --tb=short --strict-markers"
+markers = [
+    "unit: Hızlı birim testleri (DB/network yok).",
+    "integration: Entegrasyon testleri (gerçek FS, network yok).",
+    "e2e: Uçtan uca (gerçek Ollama gerekir — varsayılan koşulmaz).",
+]

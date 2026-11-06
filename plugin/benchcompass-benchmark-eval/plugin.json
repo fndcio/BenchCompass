@@ -1,0 +1,56 @@
+{
+  "name": "benchcompass-benchmark-eval",
+  "version": "0.1.0",
+  "description": "Ollama yerel model degerlendirme aracı: hiz (tok/s, prefill, TTFT) + kalite (24+ EN / TR gorev suite). MD + interaktif HTML rapor uretir.",
+  "license": "MIT",
+  "runtime": {
+    "python": ">=3.11",
+    "requirements": "sadece stdlib (urllib, json, argparse) — ucuncu parti bagimlilik YOK",
+    "ollama": ">=0.32 (yerel 11434)"
+  },
+  "architecture": {
+    "standalone": true,
+    "note": "Plugin kendi icinde tam bagimsiz calisir. Baska bir projeye plugin/benchcompass-benchmark-eval/ klasorunu kopyala -> cd -> python -m benchcompass_benchmark_eval.scripts.run_benchmark --pipeline",
+    "llmfit_integration": {
+      "mode": "optional-enrichment",
+      "resolver": "eval/llmfit_data.py",
+      "resolution_order": [
+        "1. --llmfit-data-dir (veya otomatik tespit: parent proje data/)",
+        "2. plugin data/llmfit_snapshot_*.json (standalone onbellek)",
+        "3. yoksa llmfit verisi olmadan calis (graceful degradation)"
+      ],
+      "shared_data_folder": "parent projenin data/ (hf_models.json, benchmark_cache.json) entegre modda okunur"
+    },
+    "integration_points": [
+      {
+        "id": "dashboard-menu",
+        "target": "benchcompass",
+        "file": "web/index.html",
+        "detail": "[ RAPOR ] nav butonu + view=='rapor' iframe (reports/index.html)"
+      },
+      {
+        "id": "dashboard-mount",
+        "target": "benchcompass",
+        "file": "api/main.py",
+        "detail": "app.mount('/eval-reports', NoCacheStaticFiles(...))"
+      },
+      {
+        "id": "sqlite-history",
+        "target": "benchmark_history.db",
+        "table": "benchmarks",
+        "detail": "pipeline sonuclari source='plugin-eval' ile INSERT edilir"
+      }
+    ]
+  },
+  "outputs": {
+    "reports": ["reports/index.md", "reports/index.html"],
+    "data": ["data/results_<tarih>.json", "data/hardware.json", "data/llmfit_snapshot_<tarih>.json"],
+    "html_features": {
+      "self_contained": true,
+      "charts": "hybrid: Chart.js CDN denenir, yoksa elle SVG/Canvas fallback",
+      "offline": true
+    }
+  },
+  "test_suites": ["tasks/suite_default.json (EN)", "tasks/suite_tr.json (TR)"],
+  "keywords": ["llmfit", "benchmark", "ollama", "local-llm", "eval", "report"]
+}

@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+title: BenchCompass — Local LLM Hardware Benchmark
+message: "Local LLM hardware benchmark (SQLite, donanıma duyarlı tier motoru)."
+type: software
+authors:
+  - name: fndcio
+identifiers:
+  - type: github
+    value: fndcio/BenchCompass
+repository-code: https://github.com/fndcio/BenchCompass
+date-released: 2026-11-06
+license: MIT

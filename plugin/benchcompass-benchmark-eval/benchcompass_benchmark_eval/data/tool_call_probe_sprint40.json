@@ -1,0 +1,16 @@
+[
+  {
+    "model": "qwen3-vl:8b",
+    "elapsed_s": 25.0,
+    "tool_calls": 1,
+    "valid_json": true,
+    "samples": [
+      [
+        "valid",
+        "{\"city\":\"Ankara\",\"unit\":\"celsius\"}"
+      ]
+    ],
+    "finish": "tool_calls",
+    "prompt_tokens": 221
+  }
+]

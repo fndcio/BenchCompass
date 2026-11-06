@@ -1,0 +1,9 @@
+{
+  "_comment": "Enerji/maliyet hesap fiyatlari (Sprint 45 & P1-6). Degerler elle guncellenebilir; dosya yoksa api/energy.py DEFAULT_PRICING gecerlidir.",
+  "electricity_try_per_kwh": 2.5,
+  "daily_usage_hours": 2.0,
+  "assumed_gpu_w": 120.0,
+  "usd_try": 42.0,
+  "cloud_blended_usd_per_mtok": 0.38,
+  "grid_co2_g_per_kwh": 450.0
+}

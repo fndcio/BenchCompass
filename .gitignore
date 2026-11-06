@@ -1,0 +1,62 @@
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+node_modules/
+dist/
+.DS_Store
+
+# Y16: Gizli/veri dosyaları - commit'e ASLA girmez
+benchmark_history.db*
+report/
+.zcode/plans/
+.quality-baseline.json
+
+# G10: test zekasi kalici kaydi - append-only, commit'e girmez (Sprint 29 U2)
+data/test-intelligence/
+
+# Ortam/araç artefaktları (Sprint 27)
+.venv/
+uv.lock
+.sync-backup/
+data/e2e-uvicorn.log
+docs/reports/test-status-latest.md
+BenchKit/
+
+# pytest geçici kökü — TEMP yazılamadığında çalışma dizinine düşer
+pytest-of-*/
+.pytest-basetemp/
+.e2e-tmp/
+
+# Model weights
+*.gguf
+*.bin
+models/**/*.gguf
+
+# Model envanter paneli — üretilen çıktı + gömülü vendor kütüphaneleri
+model_envanter_paneli.html
+tools/vendor/
+scratch/arsiv/strata_audit/
+
+# Yeniden düzenleme arşivi (25 Ekim 2026) — eski proje kopyaları, asla commitleme
+/arsiv/
+
+# Python build artefaktı — repoya girmez
+*.egg-info/
+
+# Yerel yedekler ve geçici dosyalar (25 Ekim 2026)
+backups/
+tmp_json.txt
+.acl-recovery/
+.playwright-mcp/
+models/install-logs/
+
+data/benchmark_cache.json
+data/model_decisions_archive.json
+plugin/**/data/results_*.json
+plugin/**/data/hardware.json
+plugin/**/reports/

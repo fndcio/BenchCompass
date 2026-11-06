@@ -1,0 +1,18 @@
+{
+  "opt_in": false,
+  "share_endpoint": "https://github.com/BenchCompass/benchcompass-community/issues/new",
+  "include_fields": [
+    "model_family",
+    "quant",
+    "gpu_tier",
+    "measured_tps",
+    "score_normalized"
+  ],
+  "exclude_fields": [
+    "gpu_name",
+    "system_path",
+    "username",
+    "hostname",
+    "ip_address"
+  ]
+}

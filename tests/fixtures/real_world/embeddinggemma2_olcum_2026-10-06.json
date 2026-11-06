@@ -1,0 +1,473 @@
+{
+  "meta": {
+    "tarih": "2026-10-06T21:02:25",
+    "v2": "ggml-org/embeddinggemma-2-GGUF BF16, llama-server b10964 --embedding, GPU tam offload, port 11499",
+    "protokol": "embed_ab.py (2 Eki) birebir sorular + yön nüansı + MRL + hız",
+    "v2_determinizm_cos": 1,
+    "vram_son": "3796, 12227"
+  },
+  "hiz": {
+    "embeddinggemma-2 (ham)": {
+      "dok_sn": 149.18,
+      "dok_sn_3kosum": [
+        96.79,
+        218.14,
+        132.63
+      ],
+      "tek_sorgu_ms_ort": 38.4
+    },
+    "embeddinggemma-2 (resmî prefix)": {
+      "dok_sn": 152.36,
+      "dok_sn_3kosum": [
+        131.09,
+        130.79,
+        195.2
+      ],
+      "tek_sorgu_ms_ort": 66.8
+    },
+    "embeddinggemma (v1, ham)": {
+      "dok_sn": 94.19,
+      "dok_sn_3kosum": [
+        97.36,
+        94.19,
+        91.0
+      ],
+      "tek_sorgu_ms_ort": 699.5
+    },
+    "embeddinggemma (v1, resmî prefix)": {
+      "dok_sn": 92.82,
+      "dok_sn_3kosum": [
+        96.45,
+        87.48,
+        94.54
+      ],
+      "tek_sorgu_ms_ort": 466.1
+    },
+    "qwen3-embedding:0.6b (ham)": {
+      "dok_sn": 56.82,
+      "dok_sn_3kosum": [
+        55.31,
+        56.5,
+        58.65
+      ],
+      "tek_sorgu_ms_ort": 29.2
+    },
+    "qwen3-embedding:0.6b (instruct)": {
+      "dok_sn": 52.78,
+      "dok_sn_3kosum": [
+        56.53,
+        49.59,
+        52.22
+      ],
+      "tek_sorgu_ms_ort": 27.4
+    }
+  },
+  "paket_a": {
+    "embeddinggemma-2 (ham)": {
+      "top1": "5/5",
+      "mrr": 1.0,
+      "detay": [
+        {
+          "sorgu": "spor",
+          "rank": 1,
+          "en_iyi": "Galatasaray derbi maçında son dakika golüyle"
+        },
+        {
+          "sorgu": "ekonomi",
+          "rank": 1,
+          "en_iyi": "Enflasyon verileri piyasalarda faiz indirim "
+        },
+        {
+          "sorgu": "yemek",
+          "rank": 1,
+          "en_iyi": "Klasik menemen için soğan mı biber mi tartış"
+        },
+        {
+          "sorgu": "teknoloji",
+          "rank": 1,
+          "en_iyi": "Açık kaynak büyük dil modelleri yerel bilgis"
+        },
+        {
+          "sorgu": "sağlık",
+          "rank": 1,
+          "en_iyi": "Günde yedi bin adım atmak kalp sağlığını bel"
+        }
+      ]
+    },
+    "embeddinggemma-2 (resmî prefix)": {
+      "top1": "5/5",
+      "mrr": 1.0,
+      "detay": [
+        {
+          "sorgu": "spor",
+          "rank": 1,
+          "en_iyi": "Galatasaray derbi maçında son dakika golüyle"
+        },
+        {
+          "sorgu": "ekonomi",
+          "rank": 1,
+          "en_iyi": "Enflasyon verileri piyasalarda faiz indirim "
+        },
+        {
+          "sorgu": "yemek",
+          "rank": 1,
+          "en_iyi": "Klasik menemen için soğan mı biber mi tartış"
+        },
+        {
+          "sorgu": "teknoloji",
+          "rank": 1,
+          "en_iyi": "Açık kaynak büyük dil modelleri yerel bilgis"
+        },
+        {
+          "sorgu": "sağlık",
+          "rank": 1,
+          "en_iyi": "Günde yedi bin adım atmak kalp sağlığını bel"
+        }
+      ]
+    },
+    "embeddinggemma (v1, ham)": {
+      "top1": "5/5",
+      "mrr": 1.0,
+      "detay": [
+        {
+          "sorgu": "spor",
+          "rank": 1,
+          "en_iyi": "Galatasaray derbi maçında son dakika golüyle"
+        },
+        {
+          "sorgu": "ekonomi",
+          "rank": 1,
+          "en_iyi": "Enflasyon verileri piyasalarda faiz indirim "
+        },
+        {
+          "sorgu": "yemek",
+          "rank": 1,
+          "en_iyi": "Karnıyarık tarifi için patlıcanlar öncelikle"
+        },
+        {
+          "sorgu": "teknoloji",
+          "rank": 1,
+          "en_iyi": "Açık kaynak büyük dil modelleri yerel bilgis"
+        },
+        {
+          "sorgu": "sağlık",
+          "rank": 1,
+          "en_iyi": "Günde yedi bin adım atmak kalp sağlığını bel"
+        }
+      ]
+    },
+    "embeddinggemma (v1, resmî prefix)": {
+      "top1": "5/5",
+      "mrr": 1.0,
+      "detay": [
+        {
+          "sorgu": "spor",
+          "rank": 1,
+          "en_iyi": "Galatasaray derbi maçında son dakika golüyle"
+        },
+        {
+          "sorgu": "ekonomi",
+          "rank": 1,
+          "en_iyi": "Enflasyon verileri piyasalarda faiz indirim "
+        },
+        {
+          "sorgu": "yemek",
+          "rank": 1,
+          "en_iyi": "Klasik menemen için soğan mı biber mi tartış"
+        },
+        {
+          "sorgu": "teknoloji",
+          "rank": 1,
+          "en_iyi": "Açık kaynak büyük dil modelleri yerel bilgis"
+        },
+        {
+          "sorgu": "sağlık",
+          "rank": 1,
+          "en_iyi": "Günde yedi bin adım atmak kalp sağlığını bel"
+        }
+      ]
+    },
+    "qwen3-embedding:0.6b (ham)": {
+      "top1": "5/5",
+      "mrr": 1.0,
+      "detay": [
+        {
+          "sorgu": "spor",
+          "rank": 1,
+          "en_iyi": "Galatasaray derbi maçında son dakika golüyle"
+        },
+        {
+          "sorgu": "ekonomi",
+          "rank": 1,
+          "en_iyi": "Enflasyon verileri piyasalarda faiz indirim "
+        },
+        {
+          "sorgu": "yemek",
+          "rank": 1,
+          "en_iyi": "Klasik menemen için soğan mı biber mi tartış"
+        },
+        {
+          "sorgu": "teknoloji",
+          "rank": 1,
+          "en_iyi": "Açık kaynak büyük dil modelleri yerel bilgis"
+        },
+        {
+          "sorgu": "sağlık",
+          "rank": 1,
+          "en_iyi": "Günde yedi bin adım atmak kalp sağlığını bel"
+        }
+      ]
+    },
+    "qwen3-embedding:0.6b (instruct)": {
+      "top1": "5/5",
+      "mrr": 1.0,
+      "detay": [
+        {
+          "sorgu": "spor",
+          "rank": 1,
+          "en_iyi": "Galatasaray derbi maçında son dakika golüyle"
+        },
+        {
+          "sorgu": "ekonomi",
+          "rank": 1,
+          "en_iyi": "Enflasyon verileri piyasalarda faiz indirim "
+        },
+        {
+          "sorgu": "yemek",
+          "rank": 1,
+          "en_iyi": "Klasik menemen için soğan mı biber mi tartış"
+        },
+        {
+          "sorgu": "teknoloji",
+          "rank": 1,
+          "en_iyi": "Açık kaynak büyük dil modelleri yerel bilgis"
+        },
+        {
+          "sorgu": "sağlık",
+          "rank": 1,
+          "en_iyi": "Günde yedi bin adım atmak kalp sağlığını bel"
+        }
+      ]
+    }
+  },
+  "paket_b": {
+    "embeddinggemma-2 (ham)": {
+      "top1": "2/4",
+      "detay": [
+        {
+          "sorgu": "Faiz artırım kararı geldi",
+          "sonuc": "YANLIS->Merkez Bankası toplantısında politika fa"
+        },
+        {
+          "sorgu": "Faiz indirimi açıklandı",
+          "sonuc": "YANLIS->Merkez Bankası toplantısında politika fa"
+        },
+        {
+          "sorgu": "Elektrik tüketimi arttı",
+          "sonuc": "OK"
+        },
+        {
+          "sorgu": "Borsa yükselişle güne başladı",
+          "sonuc": "OK"
+        }
+      ]
+    },
+    "embeddinggemma-2 (resmî prefix)": {
+      "top1": "4/4",
+      "detay": [
+        {
+          "sorgu": "Faiz artırım kararı geldi",
+          "sonuc": "OK"
+        },
+        {
+          "sorgu": "Faiz indirimi açıklandı",
+          "sonuc": "OK"
+        },
+        {
+          "sorgu": "Elektrik tüketimi arttı",
+          "sonuc": "OK"
+        },
+        {
+          "sorgu": "Borsa yükselişle güne başladı",
+          "sonuc": "OK"
+        }
+      ]
+    },
+    "embeddinggemma (v1, ham)": {
+      "top1": "4/4",
+      "detay": [
+        {
+          "sorgu": "Faiz artırım kararı geldi",
+          "sonuc": "OK"
+        },
+        {
+          "sorgu": "Faiz indirimi açıklandı",
+          "sonuc": "OK"
+        },
+        {
+          "sorgu": "Elektrik tüketimi arttı",
+          "sonuc": "OK"
+        },
+        {
+          "sorgu": "Borsa yükselişle güne başladı",
+          "sonuc": "OK"
+        }
+      ]
+    },
+    "embeddinggemma (v1, resmî prefix)": {
+      "top1": "4/4",
+      "detay": [
+        {
+          "sorgu": "Faiz artırım kararı geldi",
+          "sonuc": "OK"
+        },
+        {
+          "sorgu": "Faiz indirimi açıklandı",
+          "sonuc": "OK"
+        },
+        {
+          "sorgu": "Elektrik tüketimi arttı",
+          "sonuc": "OK"
+        },
+        {
+          "sorgu": "Borsa yükselişle güne başladı",
+          "sonuc": "OK"
+        }
+      ]
+    },
+    "qwen3-embedding:0.6b (ham)": {
+      "top1": "3/4",
+      "detay": [
+        {
+          "sorgu": "Faiz artırım kararı geldi",
+          "sonuc": "YANLIS->Merkez Bankası toplantısında politika fa"
+        },
+        {
+          "sorgu": "Faiz indirimi açıklandı",
+          "sonuc": "OK"
+        },
+        {
+          "sorgu": "Elektrik tüketimi arttı",
+          "sonuc": "OK"
+        },
+        {
+          "sorgu": "Borsa yükselişle güne başladı",
+          "sonuc": "OK"
+        }
+      ]
+    },
+    "qwen3-embedding:0.6b (instruct)": {
+      "top1": "3/4",
+      "detay": [
+        {
+          "sorgu": "Faiz artırım kararı geldi",
+          "sonuc": "YANLIS->Merkez Bankası toplantısında politika fa"
+        },
+        {
+          "sorgu": "Faiz indirimi açıklandı",
+          "sonuc": "OK"
+        },
+        {
+          "sorgu": "Elektrik tüketimi arttı",
+          "sonuc": "OK"
+        },
+        {
+          "sorgu": "Borsa yükselişle güne başladı",
+          "sonuc": "OK"
+        }
+      ]
+    }
+  },
+  "paket_c_mrl": {
+    "embeddinggemma-2 (ham)": {
+      "yerel_dim": 768,
+      "512": {
+        "top1": "5/5",
+        "mrr": 1.0
+      },
+      "256": {
+        "top1": "5/5",
+        "mrr": 1.0
+      },
+      "128": {
+        "top1": "5/5",
+        "mrr": 1.0
+      }
+    },
+    "embeddinggemma-2 (resmî prefix)": {
+      "yerel_dim": 768,
+      "512": {
+        "top1": "5/5",
+        "mrr": 1.0
+      },
+      "256": {
+        "top1": "5/5",
+        "mrr": 1.0
+      },
+      "128": {
+        "top1": "5/5",
+        "mrr": 1.0
+      }
+    },
+    "embeddinggemma (v1, ham)": {
+      "yerel_dim": 768,
+      "512": {
+        "top1": "5/5",
+        "mrr": 1.0
+      },
+      "256": {
+        "top1": "5/5",
+        "mrr": 1.0
+      },
+      "128": {
+        "top1": "5/5",
+        "mrr": 1.0
+      }
+    },
+    "embeddinggemma (v1, resmî prefix)": {
+      "yerel_dim": 768,
+      "512": {
+        "top1": "5/5",
+        "mrr": 1.0
+      },
+      "256": {
+        "top1": "5/5",
+        "mrr": 1.0
+      },
+      "128": {
+        "top1": "5/5",
+        "mrr": 1.0
+      }
+    },
+    "qwen3-embedding:0.6b (ham)": {
+      "yerel_dim": 1024,
+      "512": {
+        "top1": "5/5",
+        "mrr": 1.0
+      },
+      "256": {
+        "top1": "5/5",
+        "mrr": 1.0
+      },
+      "128": {
+        "top1": "5/5",
+        "mrr": 1.0
+      }
+    },
+    "qwen3-embedding:0.6b (instruct)": {
+      "yerel_dim": 1024,
+      "512": {
+        "top1": "5/5",
+        "mrr": 1.0
+      },
+      "256": {
+        "top1": "5/5",
+        "mrr": 1.0
+      },
+      "128": {
+        "top1": "5/5",
+        "mrr": 1.0
+      }
+    }
+  }
+}

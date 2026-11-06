@@ -1,0 +1,13 @@
+{
+  "name": "benchcompass",
+  "version": "0.28.0-rc.2",
+  "description": "Donanıma duyarlı, kalıcı SQLite destekli yerel LLM benchmark paneli frontend test paketi.",
+  "type": "module",
+  "scripts": {
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "jsdom": "^26.0.0",
+    "vitest": "^3.0.0"
+  }
+}

@@ -1,0 +1,105 @@
+# Meta-Health Pipeline — Faz 3: Master template kendi bütünlüğünü denetler
+# "Bekçi kimi bekliyor?" — master tohumdur, çürürse her çocuk çürür.
+name: Meta-Health (Faz 3)
+
+on:
+  schedule:
+    # Her Pazar 03:00 UTC — haftalık master self-audit
+    - cron: "0 3 * * 0"
+  push:
+    branches: [main, master]
+    paths:
+      - "AGENTS.md"
+      - "scripts/meta_health.py"
+      - "pyproject.toml"
+      - "docs/adr/**"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  meta-audit:
+    name: "Faz 3: Master Self-Audit"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Meta-sağlık denetimi
+        run: |
+          python scripts/meta_health.py audit --json > meta-health-report.json
+          python scripts/meta_health.py audit
+
+      - name: Özet
+        run: |
+          echo "## 🩺 Master Meta-Sağlık (Faz 3)" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          python -c "
+          import json
+          from collections import Counter
+          # meta_health audit --json ciktisi: {dimensions: [{name, issues: [{level, message}]}]}
+          # Not: bash cift-tirnakli python -c icinde TEK TIRNAK kullanilir —
+          # cift tirnak bash'e sizar (ilk CI kosumunda NameError'in koku).
+          data = json.load(open('meta-health-report.json'))
+          dims = data['dimensions']
+          issues = [i for dim in dims for i in dim['issues']]
+          sev = Counter(i['level'] for i in issues)
+          err = sev.get('error', 0)
+          warnn = sev.get('warn', 0)
+          infon = sev.get('info', 0)
+          print(f'- Denetlenen boyut: {len(dims)}')
+          print(f'- Toplam bulgu: {len(issues)}')
+          print(f'  - 🔴 Hata: {err}')
+          print(f'  - 🟡 Uyarı: {warnn}')
+          print(f'  - 🔵 Bilgi: {infon}')
+          if err > 0:
+              print('')
+              print('### 🔴 Kritik bulgular')
+              for i in issues:
+                  if i['level'] == 'error':
+                      print('- **' + i['dimension'] + '**: ' + i['message'])
+          " >> $GITHUB_STEP_SUMMARY
+
+      - name: Kritik bulgu varsa issue aç
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const data = JSON.parse(fs.readFileSync('meta-health-report.json', 'utf8'));
+            const errors = data.dimensions.flatMap(d => d.issues.filter(i => i.level === 'error'));
+            if (errors.length === 0) return;
+            const body = errors.map(i =>
+              `### ${i.dimension}` + '\n' + `- **${i.message}**`
+            ).join('\n\n');
+            github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `🩺 Master meta-sağlık: ${errors.length} kritik bulgu`,
+              body: `Faz 3 self-audit ${errors.length} kritik bulgu tespit etti:\n\n${body}\n\n---\n_Rule: \`scripts/meta_health.py check\`_`,
+              labels: ['meta-health', 'tech-debt']
+            });
+
+      - name: Rapor artifact'ı
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: meta-health-${{ github.run_id }}
+          path: meta-health-report.json
+          retention-days: 90
+
+  # Hard gate: check modu — error varsa fail
+  meta-check:
+    name: "Faz 3: Hard Gate (check)"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Check (error = exit 1)
+        run: python scripts/meta_health.py check

@@ -1,0 +1,13 @@
+{
+  "version": "0.28.0-rc.2",
+  "default": "single",
+  "interconnects": {
+    "single": {"bandwidth_gb_s": 450.0, "label": "Tek GPU (NVLink yok)"},
+    "pcie3": {"bandwidth_gb_s": 16.0, "label": "PCIe 3.0 x16"},
+    "pcie4": {"bandwidth_gb_s": 32.0, "label": "PCIe 4.0 x16"},
+    "pcie5": {"bandwidth_gb_s": 64.0, "label": "PCIe 5.0 x16"},
+    "nvlink": {"bandwidth_gb_s": 450.0, "label": "NVLink (2-GPU toplam)"},
+    "ethernet": {"bandwidth_gb_s": 3.125, "label": "Ethernet 25GbE (uzak GPU)"}
+  },
+  "multi_gpu_overhead_pct": 12.0
+}

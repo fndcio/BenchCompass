@@ -1,0 +1,12 @@
+# BenchCompass — Python bagimliliklari
+# Kurulum:  pip install -r requirements.txt
+#
+# Sprint 3 ile eklenen minimal bagimlilik seti. Daha once sifir bagimlilikli
+# stdlib http.server tabanli mimari FastAPI'ye tasinmistir; boylece tip guclu
+# Pydantic modelleri, otomatik OpenAPI dokumani (/docs) ve temiz CORS/OPTIONS
+# destegi gelir. SQLite hala stdlib sqlite3 ile yonetilir (SQLAlchemy yok).
+
+fastapi>=0.110
+uvicorn[standard]>=0.27
+pydantic>=2.5
+httpx>=0.27.0

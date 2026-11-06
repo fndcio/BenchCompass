@@ -1,0 +1,25 @@
+{
+  "default": "ollama",
+  "backends": {
+    "ollama": {
+      "url": "http://localhost:11434",
+      "type": "ollama",
+      "description": "Ollama Yerel API Servisi"
+    },
+    "lmstudio": {
+      "url": "http://localhost:1234",
+      "type": "openai",
+      "description": "LM Studio Local Inference Server (/v1)"
+    },
+    "llamacpp": {
+      "url": "http://localhost:8080",
+      "type": "openai",
+      "description": "llama.cpp Server (/v1)"
+    },
+    "vllm": {
+      "url": "http://localhost:8000",
+      "type": "openai",
+      "description": "vLLM Inference Engine (/v1)"
+    }
+  }
+}

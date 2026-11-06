@@ -1,0 +1,74 @@
+{
+  "bonsai2-mtp": {
+    "flags": {
+      "api": "openai_compat",
+      "temperature": 0.1
+    },
+    "tests": {
+      "tool_use": {
+        "error": "Model failed on both ports",
+        "wall_clock_s": 0
+      },
+      "web_search": {
+        "error": "Model failed on both ports",
+        "wall_clock_s": 0
+      },
+      "long_refactor": {
+        "error": "Model failed on both ports",
+        "wall_clock_s": 0
+      },
+      "needle": {
+        "error": "Model failed on both ports",
+        "wall_clock_s": 0
+      }
+    }
+  },
+  "hf-qwen3-asr": {
+    "flags": {
+      "api": "openai_compat",
+      "temperature": 0.1
+    },
+    "tests": {
+      "tool_use": {
+        "error": "Model failed on both ports",
+        "wall_clock_s": 0
+      },
+      "web_search": {
+        "error": "Model failed on both ports",
+        "wall_clock_s": 0
+      },
+      "long_refactor": {
+        "error": "Model failed on both ports",
+        "wall_clock_s": 0
+      },
+      "needle": {
+        "error": "Model failed on both ports",
+        "wall_clock_s": 0
+      }
+    }
+  },
+  "qwen35-9b-gguf": {
+    "flags": {
+      "api": "openai_compat",
+      "temperature": 0.1
+    },
+    "tests": {
+      "tool_use": {
+        "error": "Model failed on both ports",
+        "wall_clock_s": 0
+      },
+      "web_search": {
+        "error": "Model failed on both ports",
+        "wall_clock_s": 0
+      },
+      "long_refactor": {
+        "error": "Model failed on both ports",
+        "wall_clock_s": 0
+      },
+      "needle": {
+        "error": "Model failed on both ports",
+        "wall_clock_s": 0
+      }
+    }
+  }
+}

@@ -1,0 +1,761 @@
+[
+  {
+    "model": "hf.co/ornith-ai/Ornith-1.5-35B-A3B-GGUF:Q4_K_M",
+    "alias": "ornith-35b",
+    "toplam": "8/8",
+    "toplam_puan": 8,
+    "matematik": "2/2",
+    "mantik": "2/2",
+    "kodlama": "2/2",
+    "arac_json": "2/2",
+    "ort_tps": 54.6,
+    "detaylar": [
+      {
+        "id": "M1",
+        "kat": "matematik",
+        "pass": true,
+        "tps": 54.3,
+        "tokens": 132
+      },
+      {
+        "id": "M2",
+        "kat": "matematik",
+        "pass": true,
+        "tps": 54.0,
+        "tokens": 84
+      },
+      {
+        "id": "T1",
+        "kat": "mantik",
+        "pass": true,
+        "tps": 56.2,
+        "tokens": 150
+      },
+      {
+        "id": "T2",
+        "kat": "mantik",
+        "pass": true,
+        "tps": 54.5,
+        "tokens": 153
+      },
+      {
+        "id": "C1",
+        "kat": "kodlama",
+        "pass": true,
+        "tps": 53.4,
+        "tokens": 44
+      },
+      {
+        "id": "C2",
+        "kat": "kodlama",
+        "pass": true,
+        "tps": 51.7,
+        "tokens": 35
+      },
+      {
+        "id": "J1",
+        "kat": "arac_json",
+        "pass": true,
+        "tps": 55.5,
+        "tokens": 26
+      },
+      {
+        "id": "J2",
+        "kat": "arac_json",
+        "pass": true,
+        "tps": 55.8,
+        "tokens": 36
+      }
+    ]
+  },
+  {
+    "model": "rc-qwen38-27b-uncensored-iq2m:latest",
+    "alias": "uncensored-27b",
+    "toplam": "8/8",
+    "toplam_puan": 8,
+    "matematik": "2/2",
+    "mantik": "2/2",
+    "kodlama": "2/2",
+    "arac_json": "2/2",
+    "ort_tps": 37.5,
+    "detaylar": [
+      {
+        "id": "M1",
+        "kat": "matematik",
+        "pass": true,
+        "tps": 37.6,
+        "tokens": 110
+      },
+      {
+        "id": "M2",
+        "kat": "matematik",
+        "pass": true,
+        "tps": 37.5,
+        "tokens": 138
+      },
+      {
+        "id": "T1",
+        "kat": "mantik",
+        "pass": true,
+        "tps": 36.9,
+        "tokens": 131
+      },
+      {
+        "id": "T2",
+        "kat": "mantik",
+        "pass": true,
+        "tps": 37.4,
+        "tokens": 88
+      },
+      {
+        "id": "C1",
+        "kat": "kodlama",
+        "pass": true,
+        "tps": 39.0,
+        "tokens": 26
+      },
+      {
+        "id": "C2",
+        "kat": "kodlama",
+        "pass": true,
+        "tps": 37.6,
+        "tokens": 35
+      },
+      {
+        "id": "J1",
+        "kat": "arac_json",
+        "pass": true,
+        "tps": 38.9,
+        "tokens": 26
+      },
+      {
+        "id": "J2",
+        "kat": "arac_json",
+        "pass": true,
+        "tps": 38.0,
+        "tokens": 31
+      }
+    ]
+  },
+  {
+    "model": "openbmb/minicpm-v4.5:latest",
+    "alias": "minicpm-v4.5",
+    "toplam": "7/8",
+    "toplam_puan": 7,
+    "matematik": "2/2",
+    "mantik": "1/2",
+    "kodlama": "2/2",
+    "arac_json": "2/2",
+    "ort_tps": 95.9,
+    "detaylar": [
+      {
+        "id": "M1",
+        "kat": "matematik",
+        "pass": true,
+        "tps": 99.3,
+        "tokens": 98
+      },
+      {
+        "id": "M2",
+        "kat": "matematik",
+        "pass": true,
+        "tps": 99.1,
+        "tokens": 99
+      },
+      {
+        "id": "T1",
+        "kat": "mantik",
+        "pass": true,
+        "tps": 97.3,
+        "tokens": 38
+      },
+      {
+        "id": "T2",
+        "kat": "mantik",
+        "pass": false,
+        "tps": 91.4,
+        "tokens": 52
+      },
+      {
+        "id": "C1",
+        "kat": "kodlama",
+        "pass": true,
+        "tps": 92.8,
+        "tokens": 24
+      },
+      {
+        "id": "C2",
+        "kat": "kodlama",
+        "pass": true,
+        "tps": 91.7,
+        "tokens": 33
+      },
+      {
+        "id": "J1",
+        "kat": "arac_json",
+        "pass": true,
+        "tps": 92.2,
+        "tokens": 26
+      },
+      {
+        "id": "J2",
+        "kat": "arac_json",
+        "pass": true,
+        "tps": 92.7,
+        "tokens": 31
+      }
+    ]
+  },
+  {
+    "model": "qwen3:8b",
+    "alias": "qwen3-8b",
+    "toplam": "7/8",
+    "toplam_puan": 7,
+    "matematik": "2/2",
+    "mantik": "1/2",
+    "kodlama": "2/2",
+    "arac_json": "2/2",
+    "ort_tps": 94.0,
+    "detaylar": [
+      {
+        "id": "M1",
+        "kat": "matematik",
+        "pass": true,
+        "tps": 98.1,
+        "tokens": 162
+      },
+      {
+        "id": "M2",
+        "kat": "matematik",
+        "pass": true,
+        "tps": 95.7,
+        "tokens": 119
+      },
+      {
+        "id": "T1",
+        "kat": "mantik",
+        "pass": true,
+        "tps": 93.5,
+        "tokens": 62
+      },
+      {
+        "id": "T2",
+        "kat": "mantik",
+        "pass": false,
+        "tps": 88.3,
+        "tokens": 46
+      },
+      {
+        "id": "C1",
+        "kat": "kodlama",
+        "pass": true,
+        "tps": 90.2,
+        "tokens": 24
+      },
+      {
+        "id": "C2",
+        "kat": "kodlama",
+        "pass": true,
+        "tps": 89.3,
+        "tokens": 32
+      },
+      {
+        "id": "J1",
+        "kat": "arac_json",
+        "pass": true,
+        "tps": 89.3,
+        "tokens": 26
+      },
+      {
+        "id": "J2",
+        "kat": "arac_json",
+        "pass": true,
+        "tps": 89.6,
+        "tokens": 31
+      }
+    ]
+  },
+  {
+    "model": "ornith-9b:latest",
+    "alias": "ornith-9b",
+    "toplam": "7/8",
+    "toplam_puan": 7,
+    "matematik": "2/2",
+    "mantik": "1/2",
+    "kodlama": "2/2",
+    "arac_json": "2/2",
+    "ort_tps": 84.6,
+    "detaylar": [
+      {
+        "id": "M1",
+        "kat": "matematik",
+        "pass": true,
+        "tps": 89.2,
+        "tokens": 101
+      },
+      {
+        "id": "M2",
+        "kat": "matematik",
+        "pass": true,
+        "tps": 90.2,
+        "tokens": 157
+      },
+      {
+        "id": "T1",
+        "kat": "mantik",
+        "pass": true,
+        "tps": 87.5,
+        "tokens": 188
+      },
+      {
+        "id": "T2",
+        "kat": "mantik",
+        "pass": false,
+        "tps": 81.3,
+        "tokens": 112
+      },
+      {
+        "id": "C1",
+        "kat": "kodlama",
+        "pass": true,
+        "tps": 81.3,
+        "tokens": 350
+      },
+      {
+        "id": "C2",
+        "kat": "kodlama",
+        "pass": true,
+        "tps": 80.9,
+        "tokens": 35
+      },
+      {
+        "id": "J1",
+        "kat": "arac_json",
+        "pass": true,
+        "tps": 82.9,
+        "tokens": 26
+      },
+      {
+        "id": "J2",
+        "kat": "arac_json",
+        "pass": true,
+        "tps": 83.3,
+        "tokens": 31
+      }
+    ]
+  },
+  {
+    "model": "rc-gemma4-udq4kxl:latest",
+    "alias": "rc-gemma4",
+    "toplam": "7/8",
+    "toplam_puan": 7,
+    "matematik": "2/2",
+    "mantik": "1/2",
+    "kodlama": "2/2",
+    "arac_json": "2/2",
+    "ort_tps": 55.3,
+    "detaylar": [
+      {
+        "id": "M1",
+        "kat": "matematik",
+        "pass": true,
+        "tps": 62.1,
+        "tokens": 96
+      },
+      {
+        "id": "M2",
+        "kat": "matematik",
+        "pass": true,
+        "tps": 62.2,
+        "tokens": 165
+      },
+      {
+        "id": "T1",
+        "kat": "mantik",
+        "pass": false,
+        "tps": 62.1,
+        "tokens": 9
+      },
+      {
+        "id": "T2",
+        "kat": "mantik",
+        "pass": true,
+        "tps": 51.3,
+        "tokens": 157
+      },
+      {
+        "id": "C1",
+        "kat": "kodlama",
+        "pass": true,
+        "tps": 54.4,
+        "tokens": 99
+      },
+      {
+        "id": "C2",
+        "kat": "kodlama",
+        "pass": true,
+        "tps": 47.6,
+        "tokens": 43
+      },
+      {
+        "id": "J1",
+        "kat": "arac_json",
+        "pass": true,
+        "tps": 48.0,
+        "tokens": 30
+      },
+      {
+        "id": "J2",
+        "kat": "arac_json",
+        "pass": true,
+        "tps": 48.7,
+        "tokens": 36
+      }
+    ]
+  },
+  {
+    "model": "qwen3-coder:latest",
+    "alias": "qwen3-coder-18b",
+    "toplam": "7/8",
+    "toplam_puan": 7,
+    "matematik": "2/2",
+    "mantik": "1/2",
+    "kodlama": "2/2",
+    "arac_json": "2/2",
+    "ort_tps": 48.4,
+    "detaylar": [
+      {
+        "id": "M1",
+        "kat": "matematik",
+        "pass": true,
+        "tps": 48.8,
+        "tokens": 164
+      },
+      {
+        "id": "M2",
+        "kat": "matematik",
+        "pass": true,
+        "tps": 48.8,
+        "tokens": 124
+      },
+      {
+        "id": "T1",
+        "kat": "mantik",
+        "pass": false,
+        "tps": 57.6,
+        "tokens": 5
+      },
+      {
+        "id": "T2",
+        "kat": "mantik",
+        "pass": true,
+        "tps": 48.6,
+        "tokens": 139
+      },
+      {
+        "id": "C1",
+        "kat": "kodlama",
+        "pass": true,
+        "tps": 50.1,
+        "tokens": 34
+      },
+      {
+        "id": "C2",
+        "kat": "kodlama",
+        "pass": true,
+        "tps": 46.8,
+        "tokens": 33
+      },
+      {
+        "id": "J1",
+        "kat": "arac_json",
+        "pass": true,
+        "tps": 46.2,
+        "tokens": 26
+      },
+      {
+        "id": "J2",
+        "kat": "arac_json",
+        "pass": true,
+        "tps": 45.1,
+        "tokens": 31
+      }
+    ]
+  },
+  {
+    "model": "rc-orcarouter-qwen38-27b-iq2m:latest",
+    "alias": "orcarouter-27b",
+    "toplam": "7/8",
+    "toplam_puan": 7,
+    "matematik": "2/2",
+    "mantik": "1/2",
+    "kodlama": "2/2",
+    "arac_json": "2/2",
+    "ort_tps": 37.3,
+    "detaylar": [
+      {
+        "id": "M1",
+        "kat": "matematik",
+        "pass": true,
+        "tps": 37.8,
+        "tokens": 96
+      },
+      {
+        "id": "M2",
+        "kat": "matematik",
+        "pass": true,
+        "tps": 36.5,
+        "tokens": 122
+      },
+      {
+        "id": "T1",
+        "kat": "mantik",
+        "pass": true,
+        "tps": 36.1,
+        "tokens": 77
+      },
+      {
+        "id": "T2",
+        "kat": "mantik",
+        "pass": false,
+        "tps": 37.7,
+        "tokens": 53
+      },
+      {
+        "id": "C1",
+        "kat": "kodlama",
+        "pass": true,
+        "tps": 37.6,
+        "tokens": 55
+      },
+      {
+        "id": "C2",
+        "kat": "kodlama",
+        "pass": true,
+        "tps": 37.7,
+        "tokens": 35
+      },
+      {
+        "id": "J1",
+        "kat": "arac_json",
+        "pass": true,
+        "tps": 39.0,
+        "tokens": 26
+      },
+      {
+        "id": "J2",
+        "kat": "arac_json",
+        "pass": true,
+        "tps": 38.2,
+        "tokens": 31
+      }
+    ]
+  },
+  {
+    "model": "rc-qwen35-nvfp4:latest",
+    "alias": "qwen35-nvfp4",
+    "toplam": "6/8",
+    "toplam_puan": 6,
+    "matematik": "1/2",
+    "mantik": "1/2",
+    "kodlama": "2/2",
+    "arac_json": "2/2",
+    "ort_tps": 156.2,
+    "detaylar": [
+      {
+        "id": "M1",
+        "kat": "matematik",
+        "pass": true,
+        "tps": 156.1,
+        "tokens": 131
+      },
+      {
+        "id": "M2",
+        "kat": "matematik",
+        "pass": false,
+        "tps": 157.2,
+        "tokens": 130
+      },
+      {
+        "id": "T1",
+        "kat": "mantik",
+        "pass": true,
+        "tps": 155.5,
+        "tokens": 50
+      },
+      {
+        "id": "T2",
+        "kat": "mantik",
+        "pass": false,
+        "tps": 156.6,
+        "tokens": 128
+      },
+      {
+        "id": "C1",
+        "kat": "kodlama",
+        "pass": true,
+        "tps": 153.6,
+        "tokens": 26
+      },
+      {
+        "id": "C2",
+        "kat": "kodlama",
+        "pass": true,
+        "tps": 158.0,
+        "tokens": 35
+      },
+      {
+        "id": "J1",
+        "kat": "arac_json",
+        "pass": true,
+        "tps": 158.6,
+        "tokens": 26
+      },
+      {
+        "id": "J2",
+        "kat": "arac_json",
+        "pass": true,
+        "tps": 150.6,
+        "tokens": 31
+      }
+    ]
+  },
+  {
+    "model": "phi4-r-q4km:latest",
+    "alias": "phi4-r-9b",
+    "toplam": "4/8",
+    "toplam_puan": 4,
+    "matematik": "2/2",
+    "mantik": "1/2",
+    "kodlama": "1/2",
+    "arac_json": "0/2",
+    "ort_tps": 50.0,
+    "detaylar": [
+      {
+        "id": "M1",
+        "kat": "matematik",
+        "pass": true,
+        "tps": 52.2,
+        "tokens": 384
+      },
+      {
+        "id": "M2",
+        "kat": "matematik",
+        "pass": true,
+        "tps": 51.0,
+        "tokens": 384
+      },
+      {
+        "id": "T1",
+        "kat": "mantik",
+        "pass": true,
+        "tps": 50.9,
+        "tokens": 384
+      },
+      {
+        "id": "T2",
+        "kat": "mantik",
+        "pass": false,
+        "tps": 50.9,
+        "tokens": 384
+      },
+      {
+        "id": "C1",
+        "kat": "kodlama",
+        "pass": false,
+        "tps": 50.2,
+        "tokens": 384
+      },
+      {
+        "id": "C2",
+        "kat": "kodlama",
+        "pass": true,
+        "tps": 50.2,
+        "tokens": 384
+      },
+      {
+        "id": "J1",
+        "kat": "arac_json",
+        "pass": false,
+        "tps": 48.6,
+        "tokens": 384
+      },
+      {
+        "id": "J2",
+        "kat": "arac_json",
+        "pass": false,
+        "tps": 46.3,
+        "tokens": 384
+      }
+    ]
+  },
+  {
+    "model": "qwen3-vl:8b",
+    "alias": "qwen3-vl-8b",
+    "toplam": "0/8",
+    "toplam_puan": 0,
+    "matematik": "0/2",
+    "mantik": "0/2",
+    "kodlama": "0/2",
+    "arac_json": "0/2",
+    "ort_tps": 86.0,
+    "detaylar": [
+      {
+        "id": "M1",
+        "kat": "matematik",
+        "pass": false,
+        "tps": 90.8,
+        "tokens": 384
+      },
+      {
+        "id": "M2",
+        "kat": "matematik",
+        "pass": false,
+        "tps": 87.1,
+        "tokens": 384
+      },
+      {
+        "id": "T1",
+        "kat": "mantik",
+        "pass": false,
+        "tps": 84.0,
+        "tokens": 384
+      },
+      {
+        "id": "T2",
+        "kat": "mantik",
+        "pass": false,
+        "tps": 82.7,
+        "tokens": 384
+      },
+      {
+        "id": "C1",
+        "kat": "kodlama",
+        "pass": false,
+        "tps": 81.7,
+        "tokens": 384
+      },
+      {
+        "id": "C2",
+        "kat": "kodlama",
+        "pass": false,
+        "tps": 88.2,
+        "tokens": 384
+      },
+      {
+        "id": "J1",
+        "kat": "arac_json",
+        "pass": false,
+        "tps": 86.5,
+        "tokens": 384
+      },
+      {
+        "id": "J2",
+        "kat": "arac_json",
+        "pass": false,
+        "tps": 88.1,
+        "tokens": 384
+      }
+    ]
+  }
+]

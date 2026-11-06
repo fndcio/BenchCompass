@@ -1,0 +1,107 @@
+[project]
+name = "benchcompass"
+version = "0.28.0-rc.2"
+description = "Donanıma duyarlı, kalıcı SQLite destekli yerel LLM benchmark paneli (BenchCompass)."
+requires-python = ">=3.11"
+readme = "README.md"
+license = { text = "MIT" }
+dependencies = [
+    "fastapi>=0.110",
+    "uvicorn[standard]>=0.27",
+    "pydantic>=2.5",
+    "httpx>=0.27.0",
+]
+
+[project.scripts]
+benchcompass = "api.cli:main"
+
+# Çekirdek runtime bağımlılıkları (fastapi/uvicorn/pydantic) requirements.txt'te
+# (README kurulum yolu). gRPC yalnızca OPT-IN telemetri kanalı (ADR-0008) için
+# gerekli olduğundan extras'a taşındı — Local-First "stdlib öncelikli" ilkesi
+# gereği kullanılmadığında ağır bağımlılık KURULMAZ.
+# CI (.github/workflows/*.yml) `pip install -e ".[dev]"` kullanır — bu extras
+# onu çalıştırır. Python stack'te tam set stack-configs/python/pyproject.toml'dan
+# copier ile köke kopyalanır; bu dosya master/şablon ve diğer stack'ler için yeterli.
+[project.optional-dependencies]
+dev = [
+    # ruff üst sınırı: CI en yeni ruff'u kurup kural seti değişince G1/G2
+    # kırılıyordu (ilk koşumda 263 hata / 3 reformat). Yerel 0.15.x ile CI
+    # paritesi için <0.16 bandına sabitlenir (Y17 ruhu: tek kaynak pyproject).
+    "ruff>=0.15,<0.16",
+    "mypy>=1.11,<3",
+    "pytest>=8",
+    "pytest-cov>=5",
+    "radon>=6.0",
+    "pre-commit>=3.8",
+]
+e2e = [
+    "pytest-playwright>=0.5",
+    "playwright>=1.46",
+]
+quality = ["radon>=6.0", "mutmut>=3.0"]
+telemetry = [
+    "grpcio>=1.83.0",
+    "grpcio-tools>=1.83.0",
+    "protobuf>=7.35.1",
+]
+nvml = ["pynvml>=1.0,<2"]
+all = ["benchcompass[dev,e2e,quality,telemetry,nvml]"]
+
+[tool.setuptools.packages.find]
+include = ["api*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-v --tb=short"
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+asyncio_default_test_loop_scope = "function"
+markers = [
+    "integration: Entegrasyon testleri (gerçek DB/FS, network yok).",
+    "slow: Yavaş testler (>1s).",
+    "e2e: Uçtan uca tarayıcı testleri (Playwright).",
+]
+
+# G1/G2: ruff. scratch/ tek seferlik teşhis/deney dizinidir — kalite kapılarının
+# kapsamına girmez (v0.26.9: önceki oturum kalıntıları G1'i kırmıştı).
+# pytest geçici kökü de aynı sınıftır: TEMP yazılamadığında pytest
+# `pytest-of-<kullanıcı>/` dizinini çalışma dizinine açar ve içindeki kasıtlı
+# hatalı örnek kodlar G1/G2'yi kırar (7 Ekim 2026'da yaşandı).
+[tool.ruff]
+extend-exclude = ["scratch", "pytest-of-*", ".pytest-basetemp"]
+
+# G3: mypy. Şablon placeholder'ı ({{package_name}}) copier'a kadar geçersiz bir
+# paket adıdır — master'ın kendi CI'ında G3'ün kırmaması için hariç tutulur.
+# Gerçek projelerde ({{package_name}} doldurulmuş) mypy src çalışır.
+[tool.mypy]
+python_version = "3.11"
+exclude = ["src/\\{\\{package_name\\}\\}"]
+
+# Sprint 33 (R3): mypy strict kademeli geçiş — hedef modüller tip-zorunlu.
+# Genel repo non-strict kalır; bu modüller `disallow_untyped_defs` +
+# `disallow_incomplete_defs` ile denetlenir (ADR-0001).
+[[tool.mypy.overrides]]
+module = [
+    "api.schemas",
+    "api.tasks",
+    "api.compat",
+]
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+
+[tool.quality]
+max_cyclomatic_complexity = 17
+min_maintainability_index = 23
+max_duplication_pct = 3.0
+# G5 frontend test süre eşiği (sn) — verify_completion.py BURADAN okur (Y17/DRY).
+# Ağır vitest suite'leri 180s'i aşabilir; varsayılan 300s.
+frontend_test_timeout = 300
+
+[tool.coverage.run]
+source = ["api"]
+
+[tool.coverage.report]
+# 5 Ekim 2026 ratchet'i: kapı komutuyla (pytest --cov=api -m "not e2e") ölçülen
+# %87.68 üzerinden 82 → 84 (hedef 85). G9 MI no-op düzeltilmeden ratchet yapılmadı.
+fail_under = 85

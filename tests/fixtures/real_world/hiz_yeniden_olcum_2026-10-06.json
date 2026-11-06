@@ -1,0 +1,109 @@
+{
+  "meta": {
+    "tarih": "2026-10-06 01:56",
+    "protokol": "decode-only (eval_duration), num_ctx=4096 sabit, n=2 x 768 token, isinma haric — denetim raporu §4.1",
+    "not": "ilk tur (256 token) total_tokens/wall tutarsızlığı yüzünden silindi; total_tokens artık iki koşunun toplamı",
+    "kapsam_disi": "bonsai2_mtp (PrismML fork), freetoken_35b, qwen35_9b (upstream)"
+  },
+  "sonuclar": [
+    {
+      "model": "qwen3:8b",
+      "tg": 84.0,
+      "wall": 18.29,
+      "runs": [
+        87.0,
+        81.0
+      ]
+    },
+    {
+      "model": "rc-qwen35-nvfp4:latest",
+      "tg": 143.1,
+      "wall": 10.92,
+      "runs": [
+        144.2,
+        141.9
+      ]
+    },
+    {
+      "model": "qwen3-vl:8b",
+      "tg": 87.1,
+      "wall": 17.78,
+      "runs": [
+        88.6,
+        85.5
+      ]
+    },
+    {
+      "model": "openbmb/minicpm-v4.5:latest",
+      "tg": 87.0,
+      "wall": 10.38,
+      "runs": [
+        91.8,
+        82.2
+      ]
+    },
+    {
+      "model": "ornith-9b:latest",
+      "tg": 79.2,
+      "wall": 11.7,
+      "runs": [
+        82.7,
+        75.7
+      ]
+    },
+    {
+      "model": "rc-gemma4-udq4kxl:latest",
+      "tg": 53.8,
+      "wall": 28.8,
+      "runs": [
+        54.4,
+        53.3
+      ]
+    },
+    {
+      "model": "rc-qwen38-27b-uncensored-iq2m:latest",
+      "tg": 35.4,
+      "wall": 43.86,
+      "runs": [
+        36.0,
+        34.7
+      ]
+    },
+    {
+      "model": "rc-orcarouter-qwen38-27b-iq2m:latest",
+      "tg": 36.8,
+      "wall": 34.41,
+      "runs": [
+        36.9,
+        36.6
+      ]
+    },
+    {
+      "model": "phi4-r-q4km:latest",
+      "tg": 50.5,
+      "wall": 30.6,
+      "runs": [
+        50.8,
+        50.2
+      ]
+    },
+    {
+      "model": "qwen3-coder:latest",
+      "tg": 42.3,
+      "wall": 16.78,
+      "runs": [
+        41.6,
+        43.0
+      ]
+    },
+    {
+      "model": "hf.co/ornith-ai/Ornith-1.5-35B-A3B-GGUF:Q4_K_M",
+      "tg": 53.1,
+      "wall": 17.28,
+      "runs": [
+        52.7,
+        53.4
+      ]
+    }
+  ]
+}

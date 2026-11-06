@@ -1,0 +1,44 @@
+[
+  {
+    "model": "kat-coder-v2.5:latest",
+    "elapsed_s": 45.0,
+    "tool_calls": 1,
+    "valid_json": true,
+    "samples": [
+      [
+        "valid",
+        "{\"city\":\"Ankara\",\"unit\":\"celsius\"}"
+      ]
+    ],
+    "finish": "tool_calls",
+    "prompt_tokens": 335
+  },
+  {
+    "model": "qwen3-coder:latest",
+    "elapsed_s": 43.9,
+    "tool_calls": 1,
+    "valid_json": true,
+    "samples": [
+      [
+        "valid",
+        "{\"city\":\"Ankara\",\"unit\":\"celsius\"}"
+      ]
+    ],
+    "finish": "tool_calls",
+    "prompt_tokens": 362
+  },
+  {
+    "model": "mannix/qwen3.6-27b-a3b-coder:latest",
+    "elapsed_s": 53.6,
+    "tool_calls": 1,
+    "valid_json": true,
+    "samples": [
+      [
+        "valid",
+        "{\"city\":\"Ankara\",\"unit\":\"celsius\"}"
+      ]
+    ],
+    "finish": "tool_calls",
+    "prompt_tokens": 335
+  }
+]

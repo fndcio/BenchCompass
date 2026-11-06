@@ -1,0 +1,43 @@
+# Mutation Testing Pipeline — AGENTS.md [tool.mutmut]
+# Kritik modüllerde mutasyon testi. PR threshold %60, nightly %75.
+name: Mutation (mutmut)
+
+on:
+  pull_request:
+    branches: [main, master]
+    paths:
+      # Sadece mutasyona tabi kritik modüller değişince (flat layout — api/)
+      - "api/db.py"
+      - "api/compat.py"
+      - "api/ollama_client.py"
+      - "api/benchcompass_proxy.py"
+      - "api/main.py"
+      - "tests/**"
+  schedule:
+    - cron: "0 3 * * *"  # her gece
+
+permissions:
+  contents: read
+
+jobs:
+  mutation:
+    name: "Mutasyon Testi"
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - run: pip install -e ".[dev,quality]"
+
+      # || true bastırması kaldırıldı: continue-on-error işi işaretler ama
+      # zinciri kırmaz — mutasyon skoru GÖRÜNÜR olur (kapı değil, sinyal).
+      - name: Mutmut çalıştır
+        run: mutmut run --use-coverage
+        continue-on-error: true
+
+      - name: Sonuçları göster
+        run: mutmut results
+        if: always()
+        continue-on-error: true

@@ -1,0 +1,1 @@
+"""Komut satırı entrypoint'leri."""

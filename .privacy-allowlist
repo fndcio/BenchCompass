@@ -1,0 +1,3 @@
+# .privacy-allowlist — privacy_scan istisnaları
+# Format: substring | gerekçe
+# Ör: acme.example.com | örnek dokümanda yer tutucu

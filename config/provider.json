@@ -1,0 +1,5 @@
+{
+  "provider": "ollama",
+  "ollama_host": "http://localhost:11434",
+  "active_provider": "ollama"
+}

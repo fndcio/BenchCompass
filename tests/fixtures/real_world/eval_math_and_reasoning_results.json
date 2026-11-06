@@ -1,0 +1,502 @@
+[
+  {
+    "model": "phi4-r-q4km:latest",
+    "alias": "phi4-r",
+    "skor_toplam": "9/10",
+    "matematik": "5/5",
+    "mantik": "4/5",
+    "ort_tps": 49.8,
+    "detaylar": [
+      {
+        "id": "M1",
+        "tur": "matematik",
+        "gecti": true,
+        "beklenen": "25",
+        "cevap_ozet": "I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer",
+        "tps": 51.8,
+        "tokens": 512
+      },
+      {
+        "id": "M2",
+        "tur": "matematik",
+        "gecti": true,
+        "beklenen": "20",
+        "cevap_ozet": "I'll produce answer in Turkish with step-by-step explanation and final answer \"SONUC: 20\". I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce",
+        "tps": 49.9,
+        "tokens": 512
+      },
+      {
+        "id": "M3",
+        "tur": "matematik",
+        "gecti": true,
+        "beklenen": "12",
+        "cevap_ozet": "We need to provide step-by-step reasoning in Turkish. But instructions: \"Adım adım düşün\" means \"think step by step\", but final answer should be \"SONUC: <sayı>\" with only final number. But instructions say: \"cevabın en sonuna sadece nihai sayıyı 'SONUC: <sayı>' şeklinde yaz.\" So final answer should be \"SONUC: 12\". But instructions also say: \"Adım adım düşün\" so we need to provide step-by-step reasoning. But instructions say: \"cevabın en sonuna sadece nihai sayıyı 'SONUC: <sayı>' şeklinde yaz.\" So we need to provide step-by-step reasoning and then final answer line \"SONUC: 12\". But instructions say: \"cevabın en sonuna sadece nihai sayıyı 'SONUC: <sayı>' şeklinde yaz.\" So final answer should be \"SONUC: 12\". But instructions say: \"Adım adım düşün\" so we need to provide step-by-step reasoning. But instructions say: \"cevabın en sonuna sadece nihai say",
+        "tps": 48.4,
+        "tokens": 512
+      },
+      {
+        "id": "M4",
+        "tur": "matematik",
+        "gecti": true,
+        "beklenen": "6.5",
+        "cevap_ozet": "I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish. I'll produce answer in Turkish.",
+        "tps": 50.1,
+        "tokens": 512
+      },
+      {
+        "id": "M5",
+        "tur": "matematik",
+        "gecti": true,
+        "beklenen": "200",
+        "cevap_ozet": "I'll produce answer in Turkish.",
+        "tps": 49.1,
+        "tokens": 512
+      },
+      {
+        "id": "T1",
+        "tur": "mantik",
+        "gecti": true,
+        "beklenen": "Burak",
+        "cevap_ozet": "User message: \"Ahmet, Burak'tan daha uzundur. Can, Ahmet'ten daha kısadır ama Burak'tan daha uzundur. Bu üç kişi arasında en kısa olan kimdir? Cevabın en sonuna 'SONUC: <isim>' şeklinde yaz.\" This is in Turkish. Let's translate: \"Ahmet is taller than Burak. Can is shorter than Ahmet but taller than Burak. Among these three people, who is the shortest? Write your answer at the end as 'SONUC: <name>'.\" Let's analyze: We have three persons: Ahmet, Burak, Can. The statements: \"Ahmet, Burak'tan daha uzundur\" means \"Ahmet is taller than Burak.\" \"Can, Ahmet'ten daha kısadır ama Burak'tan daha uzundur\" means \"Can is shorter than Ahmet but taller than Burak.\" So ordering: Ahmet > Can > Burak. So the shortest is Burak. So answer: \"SONUC: Burak\". But we must include disclaimers for sensitive topics? The instructions say: \"You must give a disclaimer both at the beginning and at the end when replying topics above at every message.\" But the instructions say: \"When replying topics above at every message\" for sensitive topics like medical, legal, financial matters or political matters. But this is not a sensitive topic. But instructions say: \"You must give a disclaimer both at the beginning and at the end when replying topics above at every message.\" But the instructions are for sensitive topics. But the instructions say: \"When replying topics above at every message.\" But the instructions say: \"You must give a disclaimer both at the beginning and at the end when replying topics above at every message.\" But the instructions are for sensitive topics like medical, legal, financial matters or political matters. But this is not a sensitive topic. But instructions say: \"Follow these principles to ensure clarity, safety, and ethical standards in all interactions.\" But the instructions say: \"You must give a disclaimer both at the beginning and at the end when replying topics above at every message.\" But the instructions are for sensitive topics. But the instructions say: \"When replying topics above at every message.\" But the instructions say: \"You must give a disclaimer both at the beginning and at the end when replying topics above at",
+        "tps": 49.1,
+        "tokens": 512
+      },
+      {
+        "id": "T2",
+        "tur": "mantik",
+        "gecti": true,
+        "beklenen": "Kırmızı, Mavi, Yeşil",
+        "cevap_ozet": "We need to solve the puzzle. Let's re-read the puzzle: \"Bir rafta kırmızı, mavi ve yeşil kutular yan yana durmaktadır. Mavi kutu yeşil kutunun solundadır. Kırmızı kutu ise en sağda değildir ve mavi kutunun solundadır. Kutuların soldan sağa sırası nedir?\" Let's re-read: \"On a shelf, red, blue, and green boxes are placed side by side. The blue box is to the left of the green box. The red box is not on the far right and is to the left of the blue box. What is the order from left to right?\" Let's check: We have three boxes: red, blue, green. Conditions: Blue is to the left of green. Red is not on the far right and is to the left of blue. So red must be left of blue. And blue is left of green. So order: red, blue, green. But wait: \"Kırmızı kutu ise en sağda değildir\" means red is not on the far right. And \"mavi kutunun solundadır\" means red is to the left of blue. So red must be left of blue. And blue is left of green. So order: red, blue, green. But check: \"Mavi kutu yeşil kutunun solund",
+        "tps": 50.6,
+        "tokens": 512
+      },
+      {
+        "id": "T3",
+        "tur": "mantik",
+        "gecti": false,
+        "beklenen": "Cumartesi",
+        "cevap_ozet": "User message: \"Dün salı gününden sonraki gündü. Yarından sonraki gün hangi gün olacaktır? Adım adım düşün ama cevabın en sonuna 'SONUC: <gün>' şeklinde yaz.\" This is Turkish. Let's translate: \"Yesterday was Tuesday. The day after tomorrow is which day? Think step by step, but write your answer at the end as 'SONUC: <day>'.\" Wait, let me re-read: \"Dün salı gününden sonraki gündü.\" Actually, the sentence \"Dün salı gününden sonraki gündü\" means \"Yesterday was Tuesday.\" But wait, let me re-read: \"Dün salı gününden sonraki gündü.\" Actually, it's ambiguous: \"Dün salı gününden sonraki gündü\" means \"The day after yesterday was Tuesday.\" But the sentence \"Dün salı gününden sonraki gündü\" is ambiguous. Let me re-read: \"Dün salı gününden sonraki gündü.\" Actually, it's \"Dün salı gününden sonraki gün\" means \"The day after yesterday was Tuesday.\" But then the next sentence: \"Yarından sonraki gün hangi gün olacaktır?\" means \"What day will it be the day after tomorrow?\" Wait, let me re-read carefully: \"Dün salı gününden sonraki gündü.\" Actually, I need to check: \"Dün salı gününden sonraki gün\" means \"The day after yesterday was Tuesday.\" But then \"Yarından sonraki gün hangi gün olacaktır?\" means \"What day will it be the day after tomorrow?\" Wait, let me re-read: \"Dün salı gününden sonraki gün\" means \"The day after yesterday was Tuesday.\" But then \"Yarından sonraki gün\" means \"The day after tomorrow.\" But wait, the question: \"Dün salı gününden sonraki gün\" means \"The day after yesterday was Tuesday.\" But then \"Yarından sonraki gün hangi gün olacaktır?\" means \"What day will it be the day after tomorrow?\" Let me re-read the original text: \"Dün salı gününden sonraki g",
+        "tps": 49.8,
+        "tokens": 512
+      },
+      {
+        "id": "T4",
+        "tur": "mantik",
+        "gecti": true,
+        "beklenen": "B",
+        "cevap_ozet": "I'll produce answer with disclaimer at beginning and end if needed? But instructions say: \"You must give a disclaimer both at the beginning and at the end when replying topics above at every message.\" But instructions say: \"When replying topics above at every message\" but instructions say \"sensitive topics like medical, legal, financial matters or political matters\" but this is not sensitive. But instructions say \"You must give a disclaimer both at the beginning and at the end when replying topics above at every message.\" But instructions say \"sensitive topics like medical, legal, financial matters or political matters\" but this is not sensitive. But instructions say \"You must give a disclaimer both at the beginning and at the end when replying topics above at every message.\" But instructions say \"at every message\" for topics above? Let me re-read instructions: \"4. Handling Complex Topics: Provide general guidance on sensitive topics like medical, legal, financial matters or political matters, while clarifying that users should seek certified professionals for specific advice or check official sites for updated information. You must give a disclaimer both at the beginning and at the",
+        "tps": 49.6,
+        "tokens": 512
+      },
+      {
+        "id": "T5",
+        "tur": "mantik",
+        "gecti": true,
+        "beklenen": "60",
+        "cevap_ozet": "User message: \"Bir doktor hastasına 3 tane hap verir ve her yarım saatte bir birini almasını söyler. Hasta tüm hapları kaç dakikada bitirmiş olur? Adım adım düşün ama cevabın en sonuna sadece sayıyı dakika olarak 'SONUC: <sayı>' şeklinde yaz.\" This is in Turkish. Let's translate: \"A doctor gives a patient 3 pills and instructs him/her to take one pill every half hour. How many minutes does it take for the patient to finish all the pills? Think step by step, but at the end only write the number in minutes as 'SONUC: <number>'.\" So we need to solve: The patient takes 3 pills, one every half hour. But careful: The first pill is taken at time 0? Or does the doctor instruct to take one pill every half hour? Let's check: \"Bir doktor hastasına 3 tane hap verir ve her yarım saatte bir birini almasını söyler.\" It means: \"A doctor gives a patient 3 pills and instructs him/her to take one pill every half hour.\" So the patient takes the first pill at time 0? But the phrase \"her yarım saatte bir\" might be interpreted as \"every half hour, one pill.\" But if the patient takes the first pill immediately, then the next pill is taken after 30 minutes, and the third pill after another 30 minutes. But then the total time is 60 minutes. But wait, let's check: If the patient takes the first pill at time 0, then the second pill at 30 minutes, and the third pill at 60 minutes, then the total time is 60 minutes. But is that the intended interpretation? Alternatively, if the patient takes the first pill at time 0, then the next pill at 30 minutes, then the third pill at 60 minutes, then the total time is 60 minutes. But if the doctor instructs \"her yarım saatte bir\" then it might be interpreted as \"every half hour, one pill.\" But if the patient takes the first pill at time 0, then the next pill at 30 minutes, then the third pill at 60 minutes, then the total time is 60 minutes. But wait, the question \"",
+        "tps": 49.6,
+        "tokens": 512
+      }
+    ]
+  },
+  {
+    "model": "rc-gemma4-udq4kxl:latest",
+    "alias": "gemma4",
+    "skor_toplam": "10/10",
+    "matematik": "5/5",
+    "mantik": "5/5",
+    "ort_tps": 53.3,
+    "detaylar": [
+      {
+        "id": "M1",
+        "tur": "matematik",
+        "gecti": true,
+        "beklenen": "25",
+        "cevap_ozet": "SONUC: 25",
+        "tps": 60.5,
+        "tokens": 213
+      },
+      {
+        "id": "M2",
+        "tur": "matematik",
+        "gecti": true,
+        "beklenen": "20",
+        "cevap_ozet": "SONUC: 20",
+        "tps": 54.6,
+        "tokens": 219
+      },
+      {
+        "id": "M3",
+        "tur": "matematik",
+        "gecti": true,
+        "beklenen": "12",
+        "cevap_ozet": "SONUC: 12",
+        "tps": 52.2,
+        "tokens": 324
+      },
+      {
+        "id": "M4",
+        "tur": "matematik",
+        "gecti": true,
+        "beklenen": "6.5",
+        "cevap_ozet": "SONUC: 6.5",
+        "tps": 52.3,
+        "tokens": 203
+      },
+      {
+        "id": "M5",
+        "tur": "matematik",
+        "gecti": true,
+        "beklenen": "200",
+        "cevap_ozet": "SONUC: 200",
+        "tps": 51.6,
+        "tokens": 299
+      },
+      {
+        "id": "T1",
+        "tur": "mantik",
+        "gecti": true,
+        "beklenen": "Burak",
+        "cevap_ozet": "SONUC: Burak",
+        "tps": 52.7,
+        "tokens": 112
+      },
+      {
+        "id": "T2",
+        "tur": "mantik",
+        "gecti": true,
+        "beklenen": "Kırmızı, Mavi, Yeşil",
+        "cevap_ozet": "SONUC: Kırmızı, Mavi, Yeşil",
+        "tps": 50.5,
+        "tokens": 193
+      },
+      {
+        "id": "T3",
+        "tur": "mantik",
+        "gecti": true,
+        "beklenen": "Cumartesi",
+        "cevap_ozet": "SONUC: Cumartesi",
+        "tps": 53.6,
+        "tokens": 179
+      },
+      {
+        "id": "T4",
+        "tur": "mantik",
+        "gecti": true,
+        "beklenen": "B",
+        "cevap_ozet": "SONUC: B",
+        "tps": 55.3,
+        "tokens": 68
+      },
+      {
+        "id": "T5",
+        "tur": "mantik",
+        "gecti": true,
+        "beklenen": "60",
+        "cevap_ozet": "SONUC: 60",
+        "tps": 53.0,
+        "tokens": 127
+      }
+    ]
+  },
+  {
+    "model": "rc-qwen35-nvfp4:latest",
+    "alias": "qwen35-nvfp4",
+    "skor_toplam": "10/10",
+    "matematik": "5/5",
+    "mantik": "5/5",
+    "ort_tps": 141.5,
+    "detaylar": [
+      {
+        "id": "M1",
+        "tur": "matematik",
+        "gecti": true,
+        "beklenen": "25",
+        "cevap_ozet": "SONUC: 25",
+        "tps": 148.9,
+        "tokens": 223
+      },
+      {
+        "id": "M2",
+        "tur": "matematik",
+        "gecti": true,
+        "beklenen": "20",
+        "cevap_ozet": "SONUC: 20",
+        "tps": 148.5,
+        "tokens": 199
+      },
+      {
+        "id": "M3",
+        "tur": "matematik",
+        "gecti": true,
+        "beklenen": "12",
+        "cevap_ozet": "SONUC: 12",
+        "tps": 148.7,
+        "tokens": 218
+      },
+      {
+        "id": "M4",
+        "tur": "matematik",
+        "gecti": true,
+        "beklenen": "6.5",
+        "cevap_ozet": "SONUC: 6.5",
+        "tps": 141.2,
+        "tokens": 313
+      },
+      {
+        "id": "M5",
+        "tur": "matematik",
+        "gecti": true,
+        "beklenen": "200",
+        "cevap_ozet": "SONUC: 200",
+        "tps": 140.9,
+        "tokens": 186
+      },
+      {
+        "id": "T1",
+        "tur": "mantik",
+        "gecti": true,
+        "beklenen": "Burak",
+        "cevap_ozet": "Burak'tan daha uzundur. Ahmet, Burak'tan daha uzundur. Can, Ahmet'ten daha kısadır ama Burak'tan daha uzundur. Bu üç kişi arasında en kısa olan kimdir? Cevabın en sonuna 'SONUC: <isim>' şeklinde yaz.",
+        "tps": 146.2,
+        "tokens": 64
+      },
+      {
+        "id": "T2",
+        "tur": "mantik",
+        "gecti": true,
+        "beklenen": "Kırmızı, Mavi, Yeşil",
+        "cevap_ozet": "SONUC: Kırmızı, Mavi, Yeşil",
+        "tps": 134.4,
+        "tokens": 222
+      },
+      {
+        "id": "T3",
+        "tur": "mantik",
+        "gecti": true,
+        "beklenen": "Cumartesi",
+        "cevap_ozet": "SONUC: Cumartesi",
+        "tps": 142.4,
+        "tokens": 152
+      },
+      {
+        "id": "T4",
+        "tur": "mantik",
+        "gecti": true,
+        "beklenen": "B",
+        "cevap_ozet": "SONUC: B",
+        "tps": 131.0,
+        "tokens": 99
+      },
+      {
+        "id": "T5",
+        "tur": "mantik",
+        "gecti": true,
+        "beklenen": "60",
+        "cevap_ozet": "SONUC: 60",
+        "tps": 131.3,
+        "tokens": 159
+      }
+    ]
+  },
+  {
+    "model": "qwen3:8b",
+    "alias": "qwen3-8b",
+    "skor_toplam": "9/10",
+    "matematik": "5/5",
+    "mantik": "4/5",
+    "ort_tps": 81.0,
+    "detaylar": [
+      {
+        "id": "M1",
+        "tur": "matematik",
+        "gecti": true,
+        "beklenen": "25",
+        "cevap_ozet": "SONUC: 25",
+        "tps": 87.3,
+        "tokens": 171
+      },
+      {
+        "id": "M2",
+        "tur": "matematik",
+        "gecti": true,
+        "beklenen": "20",
+        "cevap_ozet": "### SONUC: 20",
+        "tps": 75.9,
+        "tokens": 212
+      },
+      {
+        "id": "M3",
+        "tur": "matematik",
+        "gecti": true,
+        "beklenen": "12",
+        "cevap_ozet": "SONUC: 12",
+        "tps": 80.2,
+        "tokens": 196
+      },
+      {
+        "id": "M4",
+        "tur": "matematik",
+        "gecti": true,
+        "beklenen": "6.5",
+        "cevap_ozet": "SONUC: 6.5",
+        "tps": 77.1,
+        "tokens": 249
+      },
+      {
+        "id": "M5",
+        "tur": "matematik",
+        "gecti": true,
+        "beklenen": "200",
+        "cevap_ozet": "SONUC: 200",
+        "tps": 82.4,
+        "tokens": 170
+      },
+      {
+        "id": "T1",
+        "tur": "mantik",
+        "gecti": true,
+        "beklenen": "Burak",
+        "cevap_ozet": "SONUC: Burak",
+        "tps": 86.8,
+        "tokens": 92
+      },
+      {
+        "id": "T2",
+        "tur": "mantik",
+        "gecti": true,
+        "beklenen": "Kırmızı, Mavi, Yeşil",
+        "cevap_ozet": "**SONUC: Kırmızı, Mavi, Yeşil**",
+        "tps": 82.5,
+        "tokens": 183
+      },
+      {
+        "id": "T3",
+        "tur": "mantik",
+        "gecti": false,
+        "beklenen": "Cumartesi",
+        "cevap_ozet": "SONUC: cuma",
+        "tps": 87.1,
+        "tokens": 59
+      },
+      {
+        "id": "T4",
+        "tur": "mantik",
+        "gecti": true,
+        "beklenen": "B",
+        "cevap_ozet": "**SONUC: B**",
+        "tps": 85.0,
+        "tokens": 64
+      },
+      {
+        "id": "T5",
+        "tur": "mantik",
+        "gecti": true,
+        "beklenen": "60",
+        "cevap_ozet": "SONUC: 60",
+        "tps": 78.3,
+        "tokens": 92
+      }
+    ]
+  },
+  {
+    "model": "qwen3-coder:latest",
+    "alias": "qwen3-coder",
+    "skor_toplam": "9/10",
+    "matematik": "5/5",
+    "mantik": "4/5",
+    "ort_tps": 51.3,
+    "detaylar": [
+      {
+        "id": "M1",
+        "tur": "matematik",
+        "gecti": true,
+        "beklenen": "25",
+        "cevap_ozet": "SONUC: 25",
+        "tps": 51.2,
+        "tokens": 221
+      },
+      {
+        "id": "M2",
+        "tur": "matematik",
+        "gecti": true,
+        "beklenen": "20",
+        "cevap_ozet": "SONUC: 20",
+        "tps": 52.7,
+        "tokens": 146
+      },
+      {
+        "id": "M3",
+        "tur": "matematik",
+        "gecti": true,
+        "beklenen": "12",
+        "cevap_ozet": "SONUC: 12",
+        "tps": 51.5,
+        "tokens": 203
+      },
+      {
+        "id": "M4",
+        "tur": "matematik",
+        "gecti": true,
+        "beklenen": "6.5",
+        "cevap_ozet": "SONUC: 6.5",
+        "tps": 51.9,
+        "tokens": 228
+      },
+      {
+        "id": "M5",
+        "tur": "matematik",
+        "gecti": true,
+        "beklenen": "200",
+        "cevap_ozet": "SONUC: 200",
+        "tps": 50.6,
+        "tokens": 147
+      },
+      {
+        "id": "T1",
+        "tur": "mantik",
+        "gecti": true,
+        "beklenen": "Burak",
+        "cevap_ozet": "SONUC: Ahmet",
+        "tps": 50.6,
+        "tokens": 112
+      },
+      {
+        "id": "T2",
+        "tur": "mantik",
+        "gecti": true,
+        "beklenen": "Kırmızı, Mavi, Yeşil",
+        "cevap_ozet": "**SONUC: Kırmızı, Mavi, Yeşil**",
+        "tps": 52.1,
+        "tokens": 236
+      },
+      {
+        "id": "T3",
+        "tur": "mantik",
+        "gecti": false,
+        "beklenen": "Cumartesi",
+        "cevap_ozet": "**SONUC: Cuma**",
+        "tps": 50.9,
+        "tokens": 206
+      },
+      {
+        "id": "T4",
+        "tur": "mantik",
+        "gecti": true,
+        "beklenen": "B",
+        "cevap_ozet": "SONUC: B",
+        "tps": 51.7,
+        "tokens": 118
+      },
+      {
+        "id": "T5",
+        "tur": "mantik",
+        "gecti": true,
+        "beklenen": "60",
+        "cevap_ozet": "SONUC: 60",
+        "tps": 49.7,
+        "tokens": 162
+      }
+    ]
+  }
+]

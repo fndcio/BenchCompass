@@ -1,0 +1,61 @@
+# E2E — Tam Paket (Gecelik)
+# AGENTS.md G6: PR'da hızlı smoke (e2e-quick.yml), gecelik tam E2E.
+# Referans: OmniAICore e2e-full-nightly.yml (genelleştirilmiş — proje komutları placeholder).
+name: E2E — Tam Paket (Gecelik)
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  PYTHON_VERSION: "3.13"
+
+jobs:
+  e2e-full:
+    name: Full E2E Suite
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Kurulum
+        run: |
+          pip install -e ".[dev,e2e]"
+          playwright install --with-deps chromium
+
+      # Uvicorn sunucusu conftest session-fixture'ı tarafından otomatik başlatılır
+      # (port 8788, /health yoklamalı) — elle başlatma adımı gerekmez.
+      - name: Tüm E2E'yi koş
+        run: |
+          pytest tests/e2e/ \
+            --tb=short \
+            --screenshot=only-on-failure \
+            --video=retain-on-failure \
+            --browser chromium \
+            --junitxml=docs/reports/junit-e2e.xml
+
+      - name: Test durum raporu üret (G10 Bileşen 2)
+        run: |
+          python scripts/test_status_report.py --output md --out docs/reports/test-status-latest.md
+
+      - name: Artefaktları yükle
+        uses: actions/upload-artifact@v4
+        with:
+          name: nightly-e2e-results
+          path: |
+            docs/reports/junit-e2e.xml
+            test-results/
+            data/test-intelligence/history.jsonl
+            docs/reports/test-status-latest.md
+          retention-days: 14

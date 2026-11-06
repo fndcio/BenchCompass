@@ -1,0 +1,12 @@
+{
+  "name": "suite_vision",
+  "lang": "en",
+  "description": "Vision görevleri (B4) — sentetik PNG'lerle temel görsel anlama. Görüntülü modeller için (minicpm-v, Qwen3-VL). Varsayılan koşuya dahil değil; --suites ile açılır.",
+  "tasks": [
+    {"id": "vs1", "type": "vision", "lang": "en", "difficulty": "kolay", "category": "görüş", "image": "solid_red", "prompt": "What is the dominant color of this image? Answer with one color name.", "expected": "red", "accept": ["red", "reddish"]},
+    {"id": "vs2", "type": "vision", "lang": "en", "difficulty": "kolay", "category": "görüş", "image": "solid_green", "prompt": "What color is this image? Answer with one color name.", "expected": "green", "accept": ["green", "greens"]},
+    {"id": "vs3", "type": "vision", "lang": "en", "difficulty": "kolay", "category": "görüş", "image": "solid_blue", "prompt": "What color is this image? Answer with one color name.", "expected": "blue", "accept": ["blue", "bluish"]},
+    {"id": "vs4", "type": "vision", "lang": "en", "difficulty": "orta", "category": "görüş", "image": "split_red_blue", "prompt": "Which color is on the LEFT side of this image? Answer with one color name.", "expected": "red", "accept": ["red"]},
+    {"id": "vs5", "type": "vision", "lang": "en", "difficulty": "orta", "category": "görüş", "image": "split_blue_red", "prompt": "Which color is on the RIGHT side of this image? Answer with one color name.", "expected": "red", "accept": ["red"]}
+  ]
+}

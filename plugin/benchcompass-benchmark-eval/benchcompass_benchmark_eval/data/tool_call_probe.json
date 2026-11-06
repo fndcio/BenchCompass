@@ -1,0 +1,34 @@
+[
+  {
+    "model": "qwen3.6:35b",
+    "elapsed_s": 36.6,
+    "tool_calls": 1,
+    "valid_json": true,
+    "samples": [
+      [
+        "valid",
+        "{\"city\":\"Ankara\",\"unit\":\"celsius\"}"
+      ]
+    ],
+    "finish": "tool_calls",
+    "prompt_tokens": 335
+  },
+  {
+    "model": "qwen3.6:27b",
+    "elapsed_s": 104.9,
+    "tool_calls": 2,
+    "valid_json": true,
+    "samples": [
+      [
+        "valid",
+        "{\"city\":\"Istanbul\",\"unit\":\"celsius\"}"
+      ],
+      [
+        "valid",
+        "{\"city\":\"Ankara\",\"unit\":\"celsius\"}"
+      ]
+    ],
+    "finish": "tool_calls",
+    "prompt_tokens": 335
+  }
+]

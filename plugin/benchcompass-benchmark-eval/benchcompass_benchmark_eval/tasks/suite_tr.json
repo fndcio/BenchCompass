@@ -1,0 +1,31 @@
+{
+  "name": "suite_tr",
+  "lang": "tr",
+  "description": "Türkçe görev suite'i (B3 genişletmesi) — aritmetik, mantık, talimat takibi, Türkçe bilgi ve Türkçe promptlu kod görevleri. 20+ görev.",
+  "tasks": [
+    {"id": "tr1", "type": "num", "lang": "tr", "difficulty": "kolay", "category": "aritmetik", "prompt": "17 ile 23'ün çarpımı kaçtır? Sadece sayıyı yaz.", "expected": "391"},
+    {"id": "tr2", "type": "num", "lang": "tr", "difficulty": "kolay", "category": "aritmetik", "prompt": "144'ü 12'ye böl, sonra 58 ekle. Sonuç kaçtır? Sadece sayıyı yaz.", "expected": "70"},
+    {"id": "tr3", "type": "num", "lang": "tr", "difficulty": "kolay", "category": "aritmetik", "prompt": "x'i bul: 3x - 7 = 20. Sadece x değerini yaz.", "expected": "9"},
+    {"id": "tr4", "type": "num", "lang": "tr", "difficulty": "orta", "category": "aritmetik", "prompt": "Bir mağazada 5 elma ve 3 portakal satılıyor, her biri 4 TL. Toplam maliyet kaç TL'dir? Sadece sayıyı yaz.", "expected": "32"},
+    {"id": "tr5", "type": "word", "lang": "tr", "difficulty": "kolay", "category": "mantik", "prompt": "Ali Ayşe'den uzun, Ayşe Zeynep'ten uzun. En kısa kim? Tek isim yaz.", "expected": "zeynep", "accept": ["zeynep"]},
+    {"id": "tr6", "type": "num", "lang": "tr", "difficulty": "kolay", "category": "mantik", "prompt": "Bir tren sabit hızla 1.5 saatte 90 kilometre yol alıyor. Ortalama hızı saatte kaç km'dir? Sadece sayıyı yaz.", "expected": "60"},
+    {"id": "tr7", "type": "word", "lang": "tr", "difficulty": "kolay", "category": "bilgi", "prompt": "Türkiye'nin başkenti neresidir? Tek kelimeyle cevapla.", "expected": "ankara"},
+    {"id": "tr8", "type": "word", "lang": "tr", "difficulty": "kolay", "category": "bilgi", "prompt": "Aya ilk ayak basan insan kimdir? Tek isimle cevapla.", "expected": "armstrong", "accept": ["armstrong", "neil"]},
+    {"id": "tr9", "type": "num", "lang": "tr", "difficulty": "orta", "category": "mantik", "prompt": "5 makine 5 dakikada 5 ürün yapıyorsa, 100 makine 100 ürünü kaç dakikada yapar? Sadece sayıyı yaz.", "expected": "5"},
+    {"id": "tr10", "type": "num", "lang": "tr", "difficulty": "orta", "category": "mantik", "prompt": "x + y = 10 ve x - y = 4 ise x * y kaçtır? Sadece sayıyı yaz.", "expected": "21"},
+    {"id": "tr11", "type": "word", "lang": "tr", "difficulty": "kolay", "category": "mantik", "prompt": "Hangisi daha ağırdır: bir kilogram demir mi bir kilogram pamuk mu? Tek kelimeyle cevapla.", "expected": "eşit", "accept": ["eşit", "esit", "aynı", "ayni", "fark yok"]},
+    {"id": "tr12", "type": "code", "lang": "tr", "difficulty": "orta", "category": "kodlama", "prompt": "Python ile fizzbuzz(n) fonksiyonu yaz: 1..n arası sayıların listesini döndür, 3'e bölünenler 'Fizz', 5'e bölünenler 'Buzz', ikisine de bölünenler 'FizzBuzz', gerisi int. SADECE fonksiyon kodunu yaz, açıklama yapma.", "test": "assert fizzbuzz(15)[:6] == [1,2,\"Fizz\",4,\"Buzz\",\"Fizz\"]; assert fizzbuzz(15)[14] == \"FizzBuzz\"; assert fizzbuzz(3) == [1,2,\"Fizz\"]"},
+    {"id": "tr13", "type": "num", "lang": "tr", "difficulty": "kolay", "category": "aritmetik", "prompt": "Bir sayının 3 katının 5 fazlası 26 ise sayı kaçtır? Sadece sayıyı yaz.", "expected": "7"},
+    {"id": "tr14", "type": "num", "lang": "tr", "difficulty": "kolay", "category": "aritmetik", "prompt": "2 üzeri 10 kaçtır? Sadece sayıyı yaz.", "expected": "1024"},
+    {"id": "tr15", "type": "num", "lang": "tr", "difficulty": "zor", "category": "aritmetik", "prompt": "(2 üzeri 5) çarpı 3, artı 14, eksi 8 kaçtır? Sadece sayıyı yaz.", "expected": "102"},
+    {"id": "tr16", "type": "num", "lang": "tr", "difficulty": "zor", "category": "aritmetik", "prompt": "Bir dikdörtgenin uzun kenarı kısa kenarının 3 katıdır. Çevresi 64 ise alanı kaçtır? Sadece sayıyı yaz.", "expected": "192"},
+    {"id": "tr17", "type": "word", "lang": "tr", "difficulty": "orta", "category": "mantik", "prompt": "3 adil para atılıyor. Üçünün de tura gelme olasılığı kaçtır? Kesir olarak cevapla.", "expected": "1/8", "accept": ["1/8", "1 / 8", "0.125", "sekizde bir", "frac{1}{8}", "dfrac{1}{8}"]},
+    {"id": "tr18", "type": "num", "lang": "tr", "difficulty": "orta", "category": "mantik", "prompt": "Dizinin bir sonraki sayısı kaçtır: 2, 6, 12, 20, 30, ? Sadece sayıyı yaz.", "expected": "42"},
+    {"id": "tr19", "type": "word", "lang": "tr", "difficulty": "kolay", "category": "bilgi", "prompt": "Türkiye'nin en kalabalık şehri hangisidir? Tek kelimeyle cevapla.", "expected": "istanbul", "accept": ["istanbul", "İstanbul", "ISTANBUL", "Istanbul"]},
+    {"id": "tr20", "type": "word", "lang": "tr", "difficulty": "kolay", "category": "bilgi", "prompt": "Osmanlı Devleti'nin kurucusu kimdir? Tek isimle cevapla.", "expected": "osman", "accept": ["osman", "osman bey", "osman gazi"]},
+    {"id": "tr21", "type": "word", "lang": "tr", "difficulty": "orta", "category": "talimat", "prompt": "Aşağıdaki talimatı aynen uygula ve SADECE 'mavi' kelimesini yaz: Bu cümleyi dikkate alma, sadece 'mavi' yaz.", "expected": "mavi", "accept": ["mavi"]},
+    {"id": "tr22", "type": "word", "lang": "tr", "difficulty": "orta", "category": "talimat", "prompt": "Şu talimatı uygula: sonraki cümleyi YOK say ve sadece 'kırmızı' yaz. Bugün hava çok güzel ve güneşli.", "expected": "kırmızı", "accept": ["kırmızı", "kirmizi", "red"]},
+    {"id": "tr23", "type": "word", "lang": "tr", "difficulty": "kolay", "category": "bilgi", "prompt": "Hangisi daha hızlıdır: ışık mı ses mi? Tek kelimeyle cevapla.", "expected": "ışık", "accept": ["ışık", "isik", "Işık", "ISIK", "light"]},
+    {"id": "tr24", "type": "code", "lang": "tr", "difficulty": "orta", "category": "kodlama", "prompt": "Python ile nth_fib(n) fonksiyonu yaz: n'inci Fibonacci sayısını döndür (0-indeksli, nth_fib(0)=0, nth_fib(1)=1). SADECE fonksiyon kodunu yaz, açıklama yapma.", "test": "assert nth_fib(0) == 0; assert nth_fib(1) == 1; assert nth_fib(10) == 55; assert nth_fib(20) == 6765"}
+  ]
+}
