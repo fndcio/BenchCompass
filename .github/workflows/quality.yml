@@ -1,0 +1,62 @@
+# Quality Pipeline — AGENTS.md G9 (kalite metrikleri) + G7 (orkestratör)
+name: Quality (G7 + G9)
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+  schedule:
+    # Her gece 03:00 UTC
+    - cron: "0 3 * * *"
+
+permissions:
+  contents: read
+
+jobs:
+  quality-metrics:
+    name: "G9: Kalite Metrikleri"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Bağımlılıkları kur
+        run: |
+          pip install -e ".[dev,quality]" radon
+          npm install -g jscpd
+
+      - name: G9 Kalite metrikleri
+        run: python scripts/quality_metrics.py --check
+
+      - name: G9 Baseline (main dalında)
+        if: github.ref == 'refs/heads/main'
+        run: python scripts/quality_metrics.py --baseline
+
+  verify-completion:
+    name: "G7: Orkestratör (verify_completion)"
+    runs-on: ubuntu-latest
+    needs: quality-metrics
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      # verify_completion G5 adımı Vitest çalıştırır — node + node_modules şart
+      # (ilk koşumlarda G5 bu işte npm kurulmadığı için düşüyordu).
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - run: npm ci
+      - run: pip install -e ".[dev,e2e]"
+      - run: playwright install --with-deps chromium
+
+      # G7: tüm G1-G12 (E2E dahil)
+      - name: G7 Doğrulama
+        run: python scripts/verify_completion.py
+        timeout-minutes: 20

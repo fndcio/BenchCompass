@@ -1,0 +1,22 @@
+{
+  "active_profile": "example",
+  "profiles": [
+    {
+      "id": "example",
+      "device_name": "Example GPU 12GB",
+      "cpu": "Example CPU",
+      "npu_tops": 0,
+      "gpu": "Example GPU",
+      "vram_gb": 12,
+      "ram_gb": 16,
+      "storage_gb": 512,
+      "os": "Linux",
+      "cuda_version": "12.x"
+    }
+  ],
+  "tier_thresholds": {
+    "vram_full_margin": 2.0,
+    "ram_full_margin": 4.0,
+    "vram_caution_margin": -1.5
+  }
+}

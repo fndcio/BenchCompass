@@ -54,9 +54,3 @@ tmp_json.txt
 .acl-recovery/
 .playwright-mcp/
 models/install-logs/
-
-data/benchmark_cache.json
-data/model_decisions_archive.json
-plugin/**/data/results_*.json
-plugin/**/data/hardware.json
-plugin/**/reports/
