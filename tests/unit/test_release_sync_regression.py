@@ -62,3 +62,71 @@ def test_ignore_patterns_block_large_models(tmp_path: Path) -> None:
     assert not (dst_dir / "model.gguf").exists()
     assert not (dst_dir / "weights.safetensors").exists()
     assert not (dst_dir / "run.log").exists()
+
+
+def test_vitrin_readme_changelog_and_hardware_template_survive_sync(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    """Tam senkron vitrin README/CHANGELOG'unu ve anonim donanım şablonunu ezmemeli.
+
+    Regresyon: 6 Kasım 2026 öncesi senkron SRC README/CHANGELOG'unu DST'ye kopyalıyordu;
+    public-plan'a göre vitrin sürümleri bilinçli olarak farklıdır (iç sprint/kapı
+    ayrıntısı yayınlanmaz). Kırık davranış tespit edildi, koruma listesine alındı.
+    """
+    src = tmp_path / "src"
+    dst = tmp_path / "dst"
+    (src / "config").mkdir(parents=True)
+    (dst / "config").mkdir(parents=True)
+    (src / ".github" / "workflows").mkdir(parents=True)
+    (dst / ".github" / "workflows").mkdir(parents=True)
+
+    (src / "README.md").write_text(
+        "# SRC README\nAGENTS.md sprint detayı\n", encoding="utf-8"
+    )
+    (src / "CHANGELOG.md").write_text("# SRC CHANGELOG\n", encoding="utf-8")
+    (src / "LICENSE").write_text("MIT — SRC çoklu telif\n", encoding="utf-8")
+    (src / "config" / "hardware_profile.json").write_text(
+        '{"active_profile": "gercek-donanim"}', encoding="utf-8"
+    )
+    (src / ".github" / "workflows" / "ci.yml").write_text(
+        "name: CI (G1-G7)\n", encoding="utf-8"
+    )
+    (src / ".github" / "workflows" / "e2e-nightly.yml").write_text(
+        "name: E2E Nightly\n", encoding="utf-8"
+    )
+    (dst / "README.md").write_text("# BenchCompass vitrin\n", encoding="utf-8")
+    (dst / "CHANGELOG.md").write_text("## [0.28.0]\n", encoding="utf-8")
+    (dst / "LICENSE").write_text("MIT — fndcio\n", encoding="utf-8")
+    (dst / "config" / "hardware_profile.json").write_text(
+        '{"active_profile": "anonim-sablon"}', encoding="utf-8"
+    )
+    (dst / ".github" / "workflows" / "ci.yml").write_text(
+        "name: CI\n", encoding="utf-8"
+    )
+
+    class _Basarili:
+        returncode = 0
+
+    monkeypatch.setattr(_sync, "SRC", src)
+    monkeypatch.setattr(_sync, "DST", dst)
+    monkeypatch.setattr(
+        _sync,
+        "subprocess",
+        type(
+            "_SahteSubprocess", (), {"run": staticmethod(lambda *a, **k: _Basarili())}
+        ),
+    )
+
+    _sync.sync_and_sanitize()
+
+    assert (dst / "README.md").read_text(encoding="utf-8") == "# BenchCompass vitrin\n"
+    assert (dst / "CHANGELOG.md").read_text(encoding="utf-8") == "## [0.28.0]\n"
+    assert (dst / "LICENSE").read_text(encoding="utf-8") == "MIT — fndcio\n"
+    assert "anonim-sablon" in (dst / "config" / "hardware_profile.json").read_text(
+        encoding="utf-8"
+    )
+    assert ".github" not in _sync.SYNC_DIRS
+    assert (dst / ".github" / "workflows" / "ci.yml").read_text(
+        encoding="utf-8"
+    ) == "name: CI\n"
+    assert not (dst / ".github" / "workflows" / "e2e-nightly.yml").exists()
